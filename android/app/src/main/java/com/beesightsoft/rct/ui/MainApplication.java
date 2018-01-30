@@ -1,4 +1,4 @@
-package com.beesightsoft.rct;
+package com.beesightsoft.rct.ui;
 
 import android.app.Application;
 

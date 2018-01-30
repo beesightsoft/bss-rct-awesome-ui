@@ -116,7 +116,7 @@ android {
     buildToolsVersion "23.0.1"
 
     defaultConfig {
-        applicationId "com.beesightsoft.rct"
+        applicationId "com.beesightsoft.rct.ui"
         minSdkVersion 16
         targetSdkVersion 22
         versionCode _VERSION_CODE

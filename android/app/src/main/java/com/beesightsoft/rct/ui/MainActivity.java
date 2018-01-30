@@ -1,4 +1,4 @@
-package com.beesightsoft.rct;
+package com.beesightsoft.rct.ui;
 
 import android.content.Intent;
 import android.content.res.Configuration;
@@ -16,7 +16,7 @@ public class MainActivity extends ReactActivity {
      */
     @Override
     protected String getMainComponentName() {
-        return "BeeSightSoftRCT";
+        return "BEEUI";
     }
 
     @Override
