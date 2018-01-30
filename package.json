@@ -22,6 +22,7 @@
     "lintdiff": "git diff --name-only --cached --relative | grep '\\.js$' | xargs standard | snazzy",
     "fixcode": "standard --fix",
     "git-hook": "npm run lint -s && npm run test -s",
+    "bee": "node bee-install.js",
     "postinstall": "rndebugger-open"
   },
   "rnpm": {
@@ -30,7 +31,9 @@
     ]
   },
   "dependencies": {
+    "@bee/hello": "file:BeeUi/bee-hello",
     "apisauce": "^0.14.2",
+    "chalk-printer": "^1.1.2",
     "format-json": "^1.0.3",
     "identity-obj-proxy": "^3.0.0",
     "lodash": "^4.17.4",
@@ -67,6 +70,8 @@
     "babel-preset-react-native": "^3.0.2",
     "enzyme": "^3.2.0",
     "enzyme-adapter-react-16": "^1.1.0",
+    "eslint": "^4.16.0",
+    "eslint-plugin-react": "^7.6.1",
     "husky": "^0.14.3",
     "ignite-animatable": "^1.0.0",
     "ignite-i18n": "^1.1.1",

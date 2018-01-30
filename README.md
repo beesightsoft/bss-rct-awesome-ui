@@ -1,4 +1,4 @@
-#  BeeSightSoftRCT
+#  BEEUI
 
 ## Requirements:
 ```
@@ -47,5 +47,18 @@ https://github.com/infinitered/ignite
 - Splash screen (https://github.com/crazycodeboy/react-native-splash-screen)
 - Convention
 
+## Custom module structure
+<img src="bee-structure.png" height="533"/>
+
+## Install custom module
+```
+For development
+node bee <lib_name>
+Example: node bee hello
+
+For production
+npm install @bee/<lib_name>
+Example: npm install @bee/hello
+```
 
 

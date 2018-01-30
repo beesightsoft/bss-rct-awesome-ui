@@ -7,32 +7,32 @@ import SplashScreen from 'react-native-splash-screen'
 import styles from './Launch.Styles'
 
 export default class LaunchScreen extends Component {
-  render () {
-    return (
-      <View style={styles.mainContainer}>
-        <ScrollView style={styles.container}>
-          <View style={styles.centered}>
-            <Image source={Images.launch} style={styles.logo} />
-          </View>
+    render() {
+        return (
+            <View style={styles.mainContainer}>
+                <ScrollView style={styles.container}>
+                    <View style={styles.centered}>
+                        <Image source={Images.launch} style={styles.logo} />
+                    </View>
 
-          <View style={styles.section} >
-            <Image source={Images.ready} />
-            <Text style={styles.sectionText}>
-              HI, I LOVE YOU ^.^
-            </Text>
-          </View>
+                    <View style={styles.section} >
+                        <Image source={Images.ready} />
+                        <Text style={styles.sectionText}>
+                            HI, I LOVE YOU ^.^
+                        </Text>
+                    </View>
 
-        </ScrollView>
-      </View>
-    )
-  }
+                </ScrollView>
+            </View>
+        )
+    }
 
-  componentDidMount() {
-    SplashScreen.hide();
+    componentDidMount() {
+        SplashScreen.hide()
 
-    setTimeout(() => {
-      this.props.navigation.navigate('MainScreen', {})
-    }, 2000)
-  }
+        setTimeout(() => {
+            this.props.navigation.navigate('MainScreen', {})
+        }, 2000)
+    }
 
 }
