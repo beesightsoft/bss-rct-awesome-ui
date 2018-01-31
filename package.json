@@ -33,7 +33,9 @@
   "dependencies": {
     "@bee/hello": "file:BeeUi/bee-hello",
     "apisauce": "^0.14.2",
+    "chalk": "^2.3.0",
     "chalk-printer": "^1.1.2",
+    "commander": "^2.13.0",
     "format-json": "^1.0.3",
     "identity-obj-proxy": "^3.0.0",
     "lodash": "^4.17.4",
@@ -54,7 +56,8 @@
     "redux-persist": "^5.4.0",
     "redux-saga": "^0.16.0",
     "reduxsauce": "0.7.0",
-    "seamless-immutable": "^7.1.2"
+    "seamless-immutable": "^7.1.2",
+    "string-format-js": "^1.0.0"
   },
   "devDependencies": {
     "@storybook/addon-storyshots": "^3.2.16",

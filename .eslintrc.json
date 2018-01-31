@@ -29,6 +29,11 @@
             "error",
             "never"
         ],
-        "no-console": "off"
+        "quotes": [
+            "error",
+            "single"
+        ],
+        "no-console": "off",
+        "no-unused-vars": "off"
     }
 }

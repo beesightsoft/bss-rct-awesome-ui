@@ -1,0 +1,11 @@
+{
+    "name": "@bee/template",
+    "version": "1.0.0",
+    "description": "Just a template",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "Nhan Cao <nhancv92@gmail.com> (https://nhancv.github.io)",
+    "license": "MIT"
+}

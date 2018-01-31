@@ -52,13 +52,7 @@ https://github.com/infinitered/ignite
 
 ## Install custom module
 ```
-For development
-node bee <lib_name>
-Example: node bee hello
-
-For production
-npm install @bee/<lib_name>
-Example: npm install @bee/hello
+node bee
 ```
 
 
