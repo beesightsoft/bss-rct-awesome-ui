@@ -34,6 +34,7 @@
             "single"
         ],
         "no-console": "off",
-        "no-unused-vars": "off"
+        "no-unused-vars": "off",
+        "no-redeclare": "off"
     }
 }
