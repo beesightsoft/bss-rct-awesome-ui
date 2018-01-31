@@ -2,7 +2,7 @@
  * @Author: Nhan Cao 
  * @Date: 2018-01-31 13:18:05 
  * @Last Modified by: nhancv92@gmail.com
- * @Last Modified time: 2018-01-31 17:58:13
+ * @Last Modified time: 2018-01-31 18:32:21
  */
 
 const program = require('commander')
@@ -13,7 +13,7 @@ const exec = require('child_process').execSync
 const format = require('string-format-js')
 const version = require('./package.json').version
 
-const prefix = 'bee/'
+const prefix = 'bee-'
 const log = console.log
 
 //TODO: Declare options
@@ -34,15 +34,15 @@ if (!process.argv.slice(2).length) {
             var libDir = './BeeUi/bee-%s'.format(lib)
             if (fs.existsSync(libDir)) {
                 exec('npm install "./BeeUi/bee-%s" --save'.format(lib))
-                print.ok('Module installed: @%s%s'.format(prefix, lib))
+                print.ok('Module installed: %s%s'.format(prefix, lib))
             } else {
                 print.warn('Module does not exist')
             }
         } else if (program.uninstall) {
             var lib = program.uninstall
             var packageJson = './package.json'
-            if (fs.existsSync(packageJson) && require(packageJson).dependencies['@%s%s'.format(prefix, lib)]) {
-                exec('npm uninstall @%s%s  --save'.format(prefix, lib))
+            if (fs.existsSync(packageJson) && require(packageJson).dependencies['%s%s'.format(prefix, lib)]) {
+                exec('npm uninstall %s%s  --save'.format(prefix, lib))
             }
             var libDir = './BeeUi/bee-%s'.format(lib)
             if (fs.existsSync(libDir)) {
@@ -52,7 +52,7 @@ if (!process.argv.slice(2).length) {
                 })
                 fs.rmdirSync(libDir)
             }
-            print.ok('Module uninstalled: @%s%s'.format(prefix, lib))
+            print.ok('Module uninstalled: %s%s'.format(prefix, lib))
         } else if (program.new) {
             var lib = program.new
             var templateDir = './BeeUi/.template'
@@ -65,10 +65,10 @@ if (!process.argv.slice(2).length) {
                 var packageJson = '%s/package.json'.format(libDir)
                 if (fs.existsSync(packageJson)) {
                     var file = require(packageJson)
-                    file.name = '@%s%s'.format(prefix, lib)
+                    file.name = '%s%s'.format(prefix, lib)
                     fs.writeFileSync(packageJson, JSON.stringify(file, null, 2), 'utf-8')
                 }
-                print.ok('Module created: @%s%s'.format(prefix, lib))
+                print.ok('Module created: %s%s'.format(prefix, lib))
             } else {
                 print.warn('Module exists')
             }

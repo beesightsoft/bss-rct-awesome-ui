@@ -1,5 +1,5 @@
 {
-    "name": "@bee/template",
+    "name": "bee-template",
     "version": "1.0.0",
     "description": "Just a template",
     "main": "index.js",

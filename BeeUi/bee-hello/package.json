@@ -1,5 +1,5 @@
 {
-    "name": "@bee/hello",
+    "name": "bee-hello",
     "version": "1.0.0",
     "description": "Just say hello",
     "main": "index.js",
