@@ -60,7 +60,3 @@ ios/*.xcworkspace
 
 package-lock.json
 yarn.lock
-
-# All files in .react but except .gitkeep
-.vscode/.react/*
-!.vscode/.react/.gitkeep
