@@ -13,7 +13,7 @@ export default class AlertMessage extends Component {
     show: PropTypes.bool
   }
 
-  render () {
+  render() {
     let messageComponent = null
     if (this.props.show) {
       const { title } = this.props

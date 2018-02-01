@@ -5,26 +5,26 @@ import BeeHello from 'bee-hello'
 import MainStyles from './Main.Styles'
 
 export default class MainScreen extends Component {
-    
-    render() {
-        return (
-            <Container>
-                <Header>
-                    <Body>
-                        <Title>MainScreen</Title>
-                    </Body>
-                </Header>
-                <Content>
 
-                    <View style={MainStyles.container}>
-                        <View style={MainStyles.center}>
-                            <Text>This is main</Text>
-                            <BeeHello></BeeHello>
-                        </View>
-                    </View>
+  render() {
+    return (
+      <Container>
+        <Header>
+          <Body>
+            <Title>MainScreen</Title>
+          </Body>
+        </Header>
+        <Content>
 
-                </Content>
-            </Container>
-        )
-    }
+          <View style={MainStyles.container}>
+            <View style={MainStyles.center}>
+              <Text>This is main</Text>
+              <BeeHello></BeeHello>
+            </View>
+          </View>
+
+        </Content>
+      </Container>
+    )
+  }
 }
