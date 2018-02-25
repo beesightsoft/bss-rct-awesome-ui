@@ -2,26 +2,25 @@
  * @Author: Nhan Cao 
  * @Date: 2018-01-31 13:18:05 
  * @Last Modified by: nhancv92@gmail.com
- * @Last Modified time: 2018-02-10 09:42:38
+ * @Last Modified time: 2018-02-25 21:11:47
  */
-
+require('string-format-js')
 const program = require('commander')
 const chalk = require('chalk')
 const fs = require('fs')
 const print = require('chalk-printer')
 const exec = require('child_process').execSync
-const format = require('string-format-js')
 const version = require('./package.json').version
 
-const prefix = 'bee-'
+const prefix = '@beesight/'
 const log = console.log
 
 //TODO: Declare options
 program
-  .version('0.1.0')
-  .option('-n, --new <lib_name>', 'New module', /^[a-zA-Z0-9]{2,50}$/g)
-  .option('-i, --install <lib_name>', 'Install module', /^[a-zA-Z0-9]{2,50}$/g)
-  .option('-u, --uninstall <lib_name>', 'Uninstall module', /^[a-zA-Z0-9]{2,50}$/g)
+  .version(version)
+  .option('-n, --new <lib_name>', 'New module')
+  .option('-i, --install <lib_name>', 'Install module')
+  .option('-u, --uninstall <lib_name>', 'Uninstall module')
   .parse(process.argv)
 
 //TODO: Make help option is default

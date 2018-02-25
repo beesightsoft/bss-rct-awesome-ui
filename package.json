@@ -1,5 +1,6 @@
 {
   "name": "BEEUI",
+  "private": true,
   "version": "0.0.1",
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
@@ -29,8 +30,8 @@
     ]
   },
   "dependencies": {
+    "@beesight/hello": "file:BeeUi/bee-hello",
     "apisauce": "^0.14.2",
-    "bee-hello": "file:BeeUi/bee-hello",
     "chalk": "^2.3.0",
     "chalk-printer": "^1.1.2",
     "commander": "^2.13.0",
