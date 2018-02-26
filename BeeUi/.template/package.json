@@ -5,8 +5,7 @@
     "description": "Just a template",
     "main": "index.js",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
-        "publish": "npm publish --access=public"
+        "test": "echo \"Error: no test specified\" && exit 1"
     },
     "author": "Nhan Cao <nhancv92@gmail.com> (https://nhancv.github.io)",
     "license": "MIT"
