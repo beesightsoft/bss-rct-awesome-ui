@@ -1,7 +1,7 @@
 {
   "name": "@beesight/component",
-  "private": true,
-  "version": "1.0.0",
+  "private": false,
+  "version": "1.0.1",
   "description": "Just a template",
   "main": "index.js",
   "scripts": {

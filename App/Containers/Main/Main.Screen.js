@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { Dimensions, ScrollView, Text, Image, View, StyleSheet } from 'react-native'
 import { Container, Header, Left, Body, Right, Button, Icon, Title, Content } from 'native-base'
-import BeeHello from '@beesight/hello'
 import BeeComponent from '@beesight/component'
 
 import styles from './Main.Styles'

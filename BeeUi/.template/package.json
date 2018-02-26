@@ -1,6 +1,6 @@
 {
     "name": "@beesight/template",
-    "private": true,
+    "private": false,
     "version": "1.0.0",
     "description": "Just a template",
     "main": "index.js",
