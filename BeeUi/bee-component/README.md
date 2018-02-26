@@ -1,6 +1,6 @@
 # BeeComponent
 
-Custom Component deal with crazy pressing of Tester
+Custom component to deal with crazy pressing by Tester. =]]
 
 Post: https://medium.com/p/142c75bf76b8
 
