@@ -30,6 +30,7 @@
     ]
   },
   "dependencies": {
+    "@beesight/component": "file:BeeUi/bee-component",
     "@beesight/hello": "file:BeeUi/bee-hello",
     "apisauce": "^0.14.2",
     "chalk": "^2.3.0",
