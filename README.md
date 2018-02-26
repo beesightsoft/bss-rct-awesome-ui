@@ -48,7 +48,7 @@ https://github.com/infinitered/ignite
 - Convention
 
 ## Custom module structure
-<img src="bee-structure.png" height="533"/>
+<img src="./Design/bss-rct-awesome-ui.png" height="533"/>
 
 ## Install custom module
 ```
