@@ -2,14 +2,14 @@
  * @Author: Nhan Cao 
  * @Date: 2018-01-31 13:18:05 
  * @Last Modified by: nhancv92@gmail.com
- * @Last Modified time: 2018-02-25 21:11:47
+ * @Last Modified time: 2018-02-26 14:47:10
  */
-require('string-format-js')
 const program = require('commander')
 const chalk = require('chalk')
 const fs = require('fs')
 const print = require('chalk-printer')
-const exec = require('child_process').execSync
+const exec = require('child_process').exec
+const execSync = require('child_process').execSync
 const version = require('./package.json').version
 
 const prefix = '@beesight/'
@@ -21,6 +21,7 @@ program
   .option('-n, --new <lib_name>', 'New module')
   .option('-i, --install <lib_name>', 'Install module')
   .option('-u, --uninstall <lib_name>', 'Uninstall module')
+  .option('-p, --publish <lib_name>', 'Publish module')
   .parse(process.argv)
 
 //TODO: Make help option is default
@@ -30,44 +31,67 @@ if (!process.argv.slice(2).length) {
   try {
     if (program.install) {
       var lib = program.install
-      var libDir = './BeeUi/bee-%s'.format(lib)
+      var libDir = `./BeeUi/bee-${lib}`
       if (fs.existsSync(libDir)) {
-        exec('npm install "./BeeUi/bee-%s" --save'.format(lib))
-        print.ok('Module installed: %s%s'.format(prefix, lib))
+        exec(`npm install "./BeeUi/bee-${lib}" --save`, (error, stdout, stderr) => {
+          if (error) {
+            console.error(`exec error: ${error}`)
+            return
+          }
+          console.log(`stdout: ${stdout}`)
+          console.log(`stderr: ${stderr}`)
+          print.ok(`Module installed: ${prefix}${lib}`)
+        })
       } else {
         print.warn('Module does not exist')
       }
     } else if (program.uninstall) {
       var lib = program.uninstall
       var packageJson = './package.json'
-      if (fs.existsSync(packageJson) && require(packageJson).dependencies['%s%s'.format(prefix, lib)]) {
-        exec('npm uninstall %s%s  --save'.format(prefix, lib))
+      if (fs.existsSync(packageJson) && require(packageJson).dependencies[`${prefix}${lib}`]) {
+        execSync(`npm uninstall ${prefix}${lib} --save`)
       }
-      var libDir = './BeeUi/bee-%s'.format(lib)
+      var libDir = `./BeeUi/bee-${lib}`
       if (fs.existsSync(libDir)) {
         fs.readdirSync(libDir).forEach(function (file, index) {
-          var curPath = '%s/%s'.format(libDir, file)
+          var curPath = `${libDir}/${file}`
           fs.unlinkSync(curPath)
         })
         fs.rmdirSync(libDir)
       }
-      print.ok('Module uninstalled: %s%s'.format(prefix, lib))
+      print.ok(`Module uninstalled: ${prefix}${lib}`)
+    } else if (program.publish) {
+      var lib = program.publish
+      var libDir = `./BeeUi/bee-${lib}`
+      if (fs.existsSync(libDir)) {
+        exec(`cd ${libDir} && npm publish --access=public`, (error, stdout, stderr) => {
+          if (error) {
+            console.error(`exec error: ${error}`)
+            return
+          }
+          console.log(`stdout: ${stdout}`)
+          console.log(`stderr: ${stderr}`)
+          print.ok(`Done: ${prefix}${lib}`)
+        })
+      } else {
+        print.warn('Module does not exist')
+      }
     } else if (program.new) {
       var lib = program.new
       var templateDir = './BeeUi/.template'
-      var libDir = './BeeUi/bee-%s'.format(lib)
+      var libDir = `./BeeUi/bee-${lib}`
       if (!fs.existsSync(libDir)) {
         fs.mkdirSync(libDir)
         fs.readdirSync(templateDir).filter((file) => file !== '.DS_Store').forEach(file => {
-          fs.copyFileSync('%s/%s'.format(templateDir, file), '%s/%s'.format(libDir, file))
+          fs.copyFileSync(`${templateDir}/${file}`, `${libDir}/${file}`)
         })
-        var packageJson = '%s/package.json'.format(libDir)
+        var packageJson = `${libDir}/package.json`
         if (fs.existsSync(packageJson)) {
           var file = require(packageJson)
-          file.name = '%s%s'.format(prefix, lib)
+          file.name = `${prefix}${lib}`
           fs.writeFileSync(packageJson, JSON.stringify(file, null, 2), 'utf-8')
         }
-        print.ok('Module created: %s%s'.format(prefix, lib))
+        print.ok(`Module created: ${prefix}${lib}`)
       } else {
         print.warn('Module exists')
       }
