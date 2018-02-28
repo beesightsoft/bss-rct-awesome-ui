@@ -14,6 +14,8 @@ export default class MainScreen extends BeeComponent {
       btn2: 0,
       log: ''
     }
+    //@nhancv: Custom BeeComponent properties
+    this.beeComponentPressDelayTimeOut = 1000
   }
   
   render() {

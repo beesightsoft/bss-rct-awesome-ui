@@ -1,8 +1,8 @@
 {
   "name": "@beesight/component",
   "private": false,
-  "version": "1.0.6",
-  "description": "Just a template",
+  "version": "1.0.7",
+  "description": "Custom component to deal with crazy pressing by Tester. =]]",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

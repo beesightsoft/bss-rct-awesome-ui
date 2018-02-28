@@ -12,6 +12,13 @@ import BeeComponent from '@beesight/component'
 
 
 export default class MainScreen extends BeeComponent {
+  
+  constructor(props) {
+    super(props)
+    //@nhancv: Custom BeeComponent properties
+    this.beeComponentPressDelayTimeOut = 1000 //Default 500ms
+  }
+
   render() {
     return (
       <Button onPress={() => {
