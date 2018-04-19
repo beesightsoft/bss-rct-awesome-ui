@@ -1,7 +1,7 @@
 {
   "name": "@beesight/component",
   "private": false,
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Custom component to deal with crazy pressing by Tester. =]]",
   "main": "index.js",
   "scripts": {
