@@ -1,4 +1,5 @@
 import { Component } from 'react'
+import _ from 'lodash'
 
 //@nhancv: Declare private data
 let _beeComponentPressDelayTimeOut = 500
